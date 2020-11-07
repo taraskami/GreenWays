@@ -10,14 +10,16 @@ body {
   background-image: url("cityscape.jpg");
 }
 #topnav {
-    font-size: 45px;
-    color: rgb(59, 66, 82);
+    font-size: 275%;
+    color: white;
     font-family: Times, serif;
     text-align: center;
     top: 50%;
     left: 50%;
     height: 50px;
-    padding-bottom: 0.5%;
+    margin: 0 auto;
+    padding-bottom: 0.1%;
+    padding-top: 0.3%;
 }
 
 /* .search_loc {
@@ -40,14 +42,24 @@ body {
 }
 
 #map {
-    height: 70%;
-    width: 90%;
-    margin: 5px auto;
+    height: 65%;
+    width: 97%;
+    margin: 10px auto;
+    -webkit-box-shadow: 0 0 9px rgb(46, 52, 64);
+        box-shadow: 0 0 9px rgb(46, 52, 64);
 }
 
 #analytics {
     background-color: rgb(229, 233, 240);
-    margin: 5px auto;
-    width: 90%;
-    height: 22%;
+    margin: 20px auto;
+    width: 20%;
+    height: 35%;
+    -webkit-box-shadow: 0 0 9px rgb(46, 52, 64);
+        box-shadow: 0 0 9px rgb(46, 52, 64);
+}
+
+#summary {
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
 }

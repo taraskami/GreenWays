@@ -1,10 +1,9 @@
 // Initialize and add the map
 function initMap() {
-// The location of Uluru
-const uluru = { lat: 42.7345, lng: -73.675};
-// The map, centered at Uluru
+ 
+const troy_kitchen = { lat: 42.728802, lng: -73.690267};
 const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 4,
-    center: uluru,
+    zoom: 15,
+    center: troy_kitchen,
 });
 }
