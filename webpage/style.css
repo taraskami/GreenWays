@@ -41,13 +41,13 @@ body {
 
 #map {
     height: 70%;
-    width: 92%;
+    width: 90%;
     margin: 5px auto;
 }
 
 #analytics {
     background-color: rgb(229, 233, 240);
     margin: 5px auto;
-    width: 92%;
+    width: 90%;
     height: 22%;
 }
