@@ -36,6 +36,8 @@ body {
 
 #location {
     font-family: Times, serif;
+    color: white;
+    background-color: rgb(46, 52, 64);
     font-size: 125%;
     outline-width: 0;
     border: none;
