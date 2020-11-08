@@ -1,7 +1,8 @@
 // Initialize and add the map
 var geocoder;
 var map;
-
+var cityCircle;
+var cityCircle2;
 var getJSON = function(url, callback) {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
@@ -32,8 +33,55 @@ function initMap() {
     .then(xmlString => $.parseXML(xmlString))
     .then((out) => {
         console.log('Output: ', out);
-        const RW = out.getElementsByTagName("RW");
-        console.log(RW.length);
+        const FI = out.getElementsByTagName("FI");
+        var max = 0;
+        var max2 = 0;
+        var coordinate;
+        var coordinate2;
+        for (var i=0;i<FI.length; i++){
+            newJF = FI[i].childNodes[(FI[i].childNodes.length)-1].getAttribute("JF");
+            if(newJF>max&&newJF!=10){
+                max = newJF;
+                coordinate=  FI[i].childNodes[1].childNodes[0].nodeValue;
+                console.log(typeof coordinate)
+                var cdnate=coordinate.split(" ");
+            }else if(newJF>max2&&newJF!=10){
+                max2 = newJF;
+                coordinate2=  FI[i].childNodes[1].childNodes[0].nodeValue;
+                console.log(typeof coordinate2)
+                var cdnate2=coordinate2.split(" ");
+            }
+            //console.log(FI[i].childNodes[(FI[i].childNodes.length)-1].getAttribute("JF"))
+        }
+        console.log(FI.length);
+        console.log(max);
+        console.log(cdnate[0])
+        var latlng=cdnate[0].split(",");
+        var latit = parseFloat(latlng[0]);
+        var lngit = parseFloat(latlng[1]);
+        var latlng2=cdnate2[0].split(",");
+        var latit2 = parseFloat(latlng2[0]);
+        var lngit2 = parseFloat(latlng2[1]);
+        cityCircle = new google.maps.Circle({
+            strokeColor: "#FF0000",
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: "#FF0000",
+            fillOpacity: 0.35,
+            map,
+            center: {lat : latit, lng: lngit},
+            radius: 300,
+          });
+          cityCircle2 = new google.maps.Circle({
+            strokeColor: "#FF0000",
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: "#FF0000",
+            fillOpacity: 0.35,
+            map,
+            center: {lat : latit2, lng: lngit2},
+            radius: 300,
+          });
     }).catch(err => console.error(err));
 }
 
@@ -41,6 +89,8 @@ function initMap() {
 
 function changeLoc() {
     var address = document.getElementById("location").value;
+    cityCircle.setMap(null);
+    cityCircle2.setMap(null);
     geocoder.geocode( { 'address': address}, function(results, status) {
       if (status == 'OK') {
         map.setCenter(results[0].geometry.location);
@@ -55,8 +105,55 @@ function changeLoc() {
         .then(xmlString => $.parseXML(xmlString))
         .then((out) => {
             console.log('Output: ', out);
-            const RW = out.getElementsByTagName("RW");
-            console.log(RW.length);
+            const FI = out.getElementsByTagName("FI");
+            var max = 0;
+            var max2 = 0;
+            var coordinate;
+            var coordinate2;
+            for (var i=0;i<FI.length; i++){
+                newJF = FI[i].childNodes[(FI[i].childNodes.length)-1].getAttribute("JF");
+                if(newJF>max&&newJF!=10){
+                    max = newJF;
+                    coordinate=  FI[i].childNodes[1].childNodes[0].nodeValue;
+                    console.log(typeof coordinate)
+                    var cdnate=coordinate.split(" ");
+                }else if(newJF>max2&&newJF!=10){
+                    max2 = newJF;
+                    coordinate2=  FI[i].childNodes[1].childNodes[0].nodeValue;
+                    console.log(typeof coordinate2)
+                    var cdnate2=coordinate2.split(" ");
+                }
+                //console.log(FI[i].childNodes[(FI[i].childNodes.length)-1].getAttribute("JF"))
+            }
+            console.log(FI.length);
+            console.log(max);
+            console.log(cdnate[0])
+            var latlng=cdnate[0].split(",");
+            var latit = parseFloat(latlng[0]);
+            var lngit = parseFloat(latlng[1]);
+            var latlng2=cdnate2[0].split(",");
+            var latit2 = parseFloat(latlng2[0]);
+            var lngit2 = parseFloat(latlng2[1]);
+            cityCircle = new google.maps.Circle({
+                strokeColor: "#FF0000",
+                strokeOpacity: 0.8,
+                strokeWeight: 2,
+                fillColor: "#FF0000",
+                fillOpacity: 0.35,
+                map,
+                center: {lat : latit, lng: lngit},
+                radius: 300,
+              });
+              cityCircle2 = new google.maps.Circle({
+                strokeColor: "#FF0000",
+                strokeOpacity: 0.8,
+                strokeWeight: 2,
+                fillColor: "#FF0000",
+                fillOpacity: 0.35,
+                map,
+                center: {lat : latit2, lng: lngit2},
+                radius: 300,
+              });
         }).catch(err => console.error(err));
       } else {
         alert('Geocode was not successful for the following reason: ' + status);
