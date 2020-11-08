@@ -10,56 +10,47 @@ body {
   background-image: url("cityscape.jpg");
 }
 #topnav {
-    font-size: 275%;
+    font-size: 300%;
     color: white;
     font-family: Times, serif;
-    text-align: center;
-    top: 50%;
-    left: 50%;
+    padding-left: 2.5%;
     height: 50px;
     margin: 0 auto;
-    padding-bottom: 0.1%;
-    padding-top: 0.3%;
+    padding-top: 0.5%;
 }
 
-/* .search_loc {
-    text-align: center;
+#map {
+    height: 82.5%;
+    width: 95%;
+    top: 2.5%;
+    margin: 0px auto;
+    -webkit-box-shadow: 0 0 5px rgb(46, 52, 64);
+        box-shadow: 0 0 5px rgb(46, 52, 64);
+}
+
+#search_loc {
     position: absolute;
-    top: 12%;
-    left: 50%;
-} */
+    top: 2%;
+    right: 2.5%;
+} 
 
 #location {
     font-family: Times, serif;
-    box-shadow: 1px 1px 1px black;
-    border-radius: 25px;
+    font-size: 125%;
     outline-width: 0;
     border: none;
     top: 50%;
     width: 450px;
-    height: 40px;
+    height: 35px;
     text-align: center;
+    -webkit-box-shadow: 0 0 5px rgb(46, 52, 64);
+        box-shadow: 0 0 5px rgb(46, 52, 64);
 }
 
-#map {
-    height: 65%;
-    width: 97%;
-    margin: 10px auto;
-    -webkit-box-shadow: 0 0 9px rgb(46, 52, 64);
-        box-shadow: 0 0 9px rgb(46, 52, 64);
-}
-
-#analytics {
-    background-color: rgb(229, 233, 240);
-    margin: 20px auto;
-    width: 20%;
-    height: 35%;
-    -webkit-box-shadow: 0 0 9px rgb(46, 52, 64);
-        box-shadow: 0 0 9px rgb(46, 52, 64);
-}
-
-#summary {
+#info {
+    font-family: Times, serif;
+    font-size: 115%;
     text-align: center;
-    padding-top: 1%;
-    padding-bottom: 1%;
+    color: whitesmoke;
+    padding-top: 3%;
 }
