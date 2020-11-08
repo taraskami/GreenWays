@@ -53,6 +53,7 @@ body {
     text-align: center;
     color: whitesmoke;
     padding-top: 3%;
+    text-shadow: 2px 2px 2px black;
 }
 
 #goto {
