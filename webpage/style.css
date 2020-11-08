@@ -54,3 +54,7 @@ body {
     color: whitesmoke;
     padding-top: 3%;
 }
+
+#goto {
+    display: none;
+}

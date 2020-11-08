@@ -26,13 +26,27 @@ function changeLoc() {
     });
 }
 
-// Execute a function when the user releases a key on the keyboard
-input.addEventListener("onEnter", function(event) {
-    // Number 13 is the "Enter" key on the keyboard
-    if (event.keyCode === 13) {
-      // Cancel the default action, if needed
-      event.preventDefault();
-      // Trigger the button element with a click
-      document.getElementById("goto").click();
+function searchBar() {
+    input = document.getElementById("location");
+    input.addEventListener("keyup", function(event) {
+        // Number 13 is the "Enter" key on the keyboard
+        if (event.keyCode === 13) {
+            // Cancel the default action, if needed
+            event.preventDefault();
+            // Trigger the button element with a click
+            document.getElementById("goto").click();
+        }
+    });
+}
+
+function f() {
+    if(document.getElementById("location").value == "Enter Location Here...") {
+        document.getElementById("location").value = "";
     }
-});
+}
+
+function b() {
+    if(document.getElementById("location").value == "") {
+        document.getElementById("location").value = "Enter Location Here...";
+    }
+}

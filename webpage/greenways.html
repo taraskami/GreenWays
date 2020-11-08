@@ -14,7 +14,8 @@
     <body>
         <div id="map"></div>
         <div id="search_loc"> 
-            <input type="textbox" id="location" placeholder="Enter Location Here..."> 
+            <input type="textbox" id="location" onclick="searchBar()" value="Enter Location Here..." 
+                   onblur="b()" onfocus="f()">
             <input type="button" id="goto" value="Encode" onclick="changeLoc()">
         </div>
         <div id="info"> @HackRpi 2020: Karthik Imayavaramban, Taras Kaminsky, Gary Wang, Stephen Zenack </div>
