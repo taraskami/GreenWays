@@ -24,18 +24,17 @@ body {
     width: 95%;
     top: 2.5%;
     margin: 0px auto;
-    -webkit-box-shadow: 0 0 15px rgb(46, 52, 64);
-    box-shadow: 0 0 5px rgb(46, 52, 64);
+    -webkit-box-shadow: 0 0 5px rgb(46, 52, 64);
+        box-shadow: 0 0 5px rgb(46, 52, 64);
 }
 
 #search_loc {
     position: absolute;
     top: 2%;
-    right: 3.1%;
+    right: 2.5%;
 } 
 
 #location {
-    color: rgb(46, 52, 64);
     font-family: Times, serif;
     font-size: 125%;
     outline-width: 0;
@@ -43,22 +42,19 @@ body {
     top: 50%;
     width: 450px;
     height: 35px;
-    text-align: left;
-    padding-left: 3%;
-    -webkit-box-shadow: 0 0 15px rgb(46, 52, 64);
-    box-shadow: 0 0 5px rgb(46, 52, 64);
+    text-align: center;
+    -webkit-box-shadow: 0 0 5px rgb(46, 52, 64);
+        box-shadow: 0 0 5px rgb(46, 52, 64);
 }
 
 #info {
     font-family: Times, serif;
     font-size: 115%;
     text-align: center;
-    color: white;
+    color: whitesmoke;
     padding-top: 3%;
-    text-shadow: 2px 2px 1.5px black;
 }
 
 #goto {
     display: none;
-    
 }
